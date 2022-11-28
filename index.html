@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/css/suggestions.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/js/jquery.suggestions.min.js'></script>
+    <script src="morpher.min.js"></script>
+    
+  <style>
+  input::-webkit-input-placeholder { color: blue; }
+  
+    body {
+      width: 100%
+      height: 100%;
+      background: radial-gradient(rgb(77, 97, 144), rgb(94, 144, 127));
+    }
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+    }
+    body {
+      padding: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    input {
+      
+      font-size: 16px;
+      padding: 4px;
+    }
+    .row {
+    width:730px;
+    margin: 8px 0;
+    }
+    .tip {
+    width: 135px;
+    font-size: large;
+    color: blue;
+    }
+    .tip1 {
+    width: 80px;
+    }
+    .tip2 {
+    width: 190px;
+    }
+    .col {
+    width: 705px;
+    margin: 6px 0;
+/*     text-transform: capitalize; */
+    }
+    .fio0 {
+	width: 0px;
+	}
+	.fio1 {
+	width: 280px;
+/* 	text-transform: capitalize; */
+	}
+    .fio2 {
+	width: 290px;
+/* 	text-transform: capitalize; */
+	}
+	.fio3 {
+	width: 400px;
+/* 	text-transform: capitalize; */
+	}
+    .formstat {
+    width: 110px;
+    }
+    .formstat1 {
+    width: 140px;
+    }
+    .formstat2 {
+    width: 150px;
+    }
+
+    .formname {
+	width: 450px;
+/* 	text-transform: capitalize; */
+    }
+    .formname1 {
+	width: 230px;
+/* 	text-transform: capitalize; */
+    }
+    .formname2 {
+	width: 560px;
+/* 	text-transform: capitalize; */
+    }
+    .formname3 {
+	width: 375px;
+/* 	text-transform: capitalize; */
+    }
+
+</style>    
+    <base target="_top">
+  		</head>
+			<body>
+				<form onsubmit="sendData(); return false;">
+
+  	<p style="text-align: center;">
+  	<strong><span style="font-size: large; color: #E2CB00;">
+ <script type="text/javascript">// <![CDATA[
+ 	day = new Date(); hour = day.getHours(); if (hour>=5 && hour<12) greeting = "Доброе утро"; else { if 	(hour>=12 && hour<18) greeting = "Добрый день"; else { if (hour>=18 && hour<24) greeting = "Добрый 		вечер"; else { if (hour>=0 && hour<5) greeting = "Доброй ночи"; } } } document.write(greeting);
+	// ]]&gt;
+	// ]]&gt;
+	// ]]&gt;
+	// ]]&gt;
+	// ]]&gt;
+	// ]]></script>
+	!  Сегодня
+ <script type="text/javascript">// <![CDATA[
+	var d = new Date();
+	var day=new Array("Воскресенье","Понедельник","Вторник",
+"Среда","Четверг","Пятница","Суббота");
+	var month=new Array("января","февраля","марта","апреля","мая","июня",
+	"июля","августа","сентября","октября","ноября","декабря");
+
+	document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]
+	+ " " + d.getFullYear() + " г.");
+	// ]]&gt;
+	// ]]&gt;
+	// ]]&gt;
+	// ]]&gt;
+	// ]]&gt;
+	// ]]></script></strong></p> 
+<section class="container"> 
+  	<div class="row">   
+  		<input id="party" name="party" type="text"
+		placeholder="Введите название, ИНН, ОГРН или адрес Компании или ИП" onfocus="this.style.background = '#2DD7E4';" onblur="this.style.background = '#80E958';" style="background: #E2CA1F;"/> 
+	</div>
+</section>
+      <input type="text" class="fio0" placeholder="Тип" id="type">
+      <input type="textarea" class="fio1" placeholder="Статус актуальный" id="actual_status">
+      <input type="text" class="fio0" placeholder="Статус Организации" id="status">
+<script>
+function myFunction() {
+  document.getElementById("status").style.color = "red";
+}
+</script>
+
+    	<input class="formname3" placeholder="Полное наименование Форма" id="party_full">
+    <div class="row">
+	</div>
+    <div class="col">
+        <input type="text" class="fio0" placeholder="Актуальность" id="actuality_date">
+      	<input type="text" class="tip1" placeholder="Кратко Форма" id="party_short">
+    	<input class="formname2" placeholder="Наименование Организации" id="name_full">
+    	    	<input type="text" class="fio0" placeholder="Дата ликвидации" id="liquidation_date">
+    </div> 
+    <div class="col">
+        <input type="text" class="formstat1" placeholder="Дата регистрации" id="registration_date">
+    	<input type="text" class="formstat" placeholder="ИНН Организации" id="inn">
+      	<input type="text" class="formstat2" placeholder="ОГРН Организации" id="ogrn">
+      	<input type="text" class="formstat1" placeholder="ОГРН Дата" id="ogrn_date">   
+      	<input type="text"class="tip1" placeholder="КПП Организации" id="kpp">
+    </div> 
+      	<input class="col" placeholder="Адрес Организации" id="address">
+    <div class="row">
+    	<input type="text" class="fio2" placeholder="Должность" id="post0">       	
+    	<input type="text" class="fio3" placeholder="ФИО"id="fiofull0">
+ 		<input type="text" id="post1" 
+    	class="fio2" placeholder="Должность род падеж">
+    	<input type="text" class="fio3" id="fiofull1" 	
+   		placeholder="ФИО полная род падеж">
+   	    <input type="text" id="post2"
+    	class="fio2" placeholder="Должность дат падеж">
+    	<input type="text" class="fio3" id="fiofull2" 	
+   		placeholder="ФИО полная дат падеж">
+    </div>
+    <section class="container">  
+    <div class="row">
+        	 <select type="text" class="tip"id="fio_gender"onfocus="this.style.background = '#2DD7E4';" onblur="this.style.background = '#80E958';" style="background: #E2CA1F;" />
+ 		 <option value="Уважаемый">Уважаемый</option>
+  		 <option value="Уважаемая">Уважаемая</option>
+			</select>
+		<input type="text" class="fio0" placeholder="ФИО"id="name">
+    	<input id="tel" type="text" class="formstat1" placeholder="Телефон Организации" maxlength="11" title="Для мобильных начинайте с 7 для остальных с 8 плюс 10 цифр номера телефона" onfocus="this.style.background = '#2DD7E4';" onblur="this.style.background = '#80E958';" style="background: #E2CA1F;">     
+    	<input id="email" name="email" type="text" class="formname1" placeholder="E-mail Организации" onfocus="this.style.background = '#2DD7E4';" onblur="this.style.background = '#80E958';"  style="background: #E2CA1F;">
+    </div>  
+	<div class="row">
+		<input type="text" class="formname1" placeholder="Ввведите расчетный счёт" id="party_account" maxlength="20" title="Расчетный счёт состоит из 20-ти знаков" onfocus="this.style.background = '#2DD7E4';" onblur="this.style.background = '#80E958';" style="background: #E2CA1F;"> 	
+    	<input id="bank" name="bank" class="formname" placeholder="Введите название Банка, БИК или SWIFT" onfocus="this.style.background = '#2DD7E4';" onblur="this.style.background = '#80E958';" style="background: #E2CA1F;">
+
+		<input class="formname1" placeholder="Корр. счёт Банка" id="correspondent_account">
+		<input class="formname" placeholder="Наименование Банка" id="name_payment">
+		<input class="formstat" placeholder="БИК Банка" id="bic">
+		<input class="formstat1" placeholder="Адрес Банка" id="payment_city">
+	    <input type="text" class="fio0" placeholder="Должность" id="post"> 
+  		<input type="submit" value="   Всё проверено, можно использовать!   " style="font-size: large; background: #64E24D; color: blue;">
+  	</div>
+ </form>  
+</section>
+
+<script>
+    // Замените на свой API-ключ
+	var token = "78c625c3d4cfa4b9e804e940ea6defbbffc1c528";
+
+function join(arr /*, separator */) {
+  var separator = arguments.length > 1 ? arguments[1] : ' ';
+  return arr.filter(function(n){return n}).join(separator);
+}
+
+function showSuggestion(suggestion) {
+  console.log(suggestion);
+  var data = suggestion.data;
+  if (!data)
+    return;
+
+ if (data.state) {
+  let stat = "";
+  if (data.state.status == 'ACTIVE') { 
+  stat = 'Действующее';}
+  else if (data.state.status == 'LIQUIDATING') {
+  stat = 'Ликвидируют';}
+  else if (data.state.status == 'LIQUIDATED') {
+  stat = 'Ликвидирована';}
+  else if (data.state.status == 'BANKRUPT') {
+  stat = 'Банкрот';}
+  else if (data.state.status == 'REORGANIZING') {
+  stat = 'Реогранизация';}  
+    $("#status").val(stat || "");
+	}  
+ 
+  if (data.type) {
+  let types = "";
+  if (data.type == 'INDIVIDUAL') { 
+  types = ' частное';}
+  else if (data.type == 'LEGAL') {
+  types = ' юр. лицо';}
+  	$("#type").val(types || "");
+	}
+	
+  if (data.opf) {
+    $("#party_short").val(data.opf.short || "");
+    $("#party_full").val(data.opf.full || "");
+  }
+  if (data.name) {
+    $("#name_short").val(data.name.short || "");
+    $("#name_full").val(data.name.full || "");
+  }
+    $("#inn").val(data.inn || ""); 
+    $("#ogrn").val(data.ogrn || "");
+    $("#kpp").val(data.kpp || "");
+  
+  if (data.management) {
+    $("#name").val([data.management.name] || "");
+    $("#post").val(data.management.post || "");
+	}
+
+    
+  if (data.address) {
+    var address = "";
+    if (data.address.data.qc == "0") {
+      address = join([data.address.data.postal_code, data.address.value]).toLowerCase();
+    } 
+    else {
+      address = data.address.data.source.toLowerCase();
+    }
+    $("#address").val(address);
+    
+   if (data.ogrn_date) { 
+    var d = new Date(data.ogrn_date);
+    var month = new Array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
+	ogrn_date = join([d.getDate(), month[d.getMonth()], d.getFullYear(),"г"]);
+    
+        $("#ogrn_date").val(ogrn_date || "");
+    } 
+   
+   if (data.state.actuality_date) { 
+    var d = new Date(data.state.actuality_date);
+    var month = new Array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
+	actuality_date = join([d.getDate(), month[d.getMonth()], d.getFullYear(),"г"]);
+    
+        $("#actuality_date").val(actuality_date || "");
+    }   
+
+   if (data.state.liquidation_date) { 
+    var d = new Date(data.state.liquidation_date);
+    var month = new Array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
+	liquidation_date = join([d.getDate(), month[d.getMonth()], d.getFullYear(),"г"]);
+    
+        $("#liquidation_date").val(liquidation_date || "");
+    }   
+
+   if (data.state.registration_date) { 
+    var d = new Date(data.state.registration_date);
+    var month = new Array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
+	registration_date = join([,d.getDate(), month[d.getMonth()], d.getFullYear(),"г"]);
+    
+        $("#registration_date").val(registration_date || "");
+    }      
+	actstat()  }
+}
+	$("#party").suggestions({token: token, type: "PARTY", count: 15,
+	/* Вызывается, когда пользователь выбирает одну из подсказок */
+	onSelect: showSuggestion
+
+}); 
+
+
+
+
+// 		$("#fio_surname").val(data.fio.surname || "");
+// 		$("#fio_name").val(data.fio.name || "");
+// 		$("#fio_patronymic").val(data.fio.patronymic || "");
+// 		$("#fio_gender").val(data.fio.gender || "");
+
+</script>
+<script>
+function actstat(){
+	let status2 = document.getElementById("status").value;
+	let type2 =  document.getElementById("type").value;
+	let date2 =  document.getElementById("liquidation_date").value;
+	let act_stat = join([status2, type2, date2]);
+	$("#actual_status").val(act_stat || "");
+
+morpherfio()	}
+</script>
+
+<script>
+	var token ="78c625c3d4cfa4b9e804e940ea6defbbffc1c528";
+  $("#email").suggestions({token: token, type: "EMAIL", count: 8,
+	onSelect: showSuggestion1
+});
+function showSuggestion1(suggestion) {
+  console.log(suggestion);
+  var data = suggestion.data;
+  if (!data)
+    return;
+
+//   $("#tel").val(data.party_tel);
+//   $("#email").val(data.unrestricted_value);
+}
+</script>
+<script>
+	var token ="78c625c3d4cfa4b9e804e940ea6defbbffc1c528";
+	$("#bank").suggestions({token: token, type: "BANK", count: 10,
+	/* Вызывается, когда пользователь выбирает одну из подсказок */
+	onSelect: showSuggestion2 
+});
+
+function showSuggestion2(suggestion) {
+  console.log(suggestion);
+  var data = suggestion.data;
+  if (!data)
+    return;
+  var name_payment2 =   data.name && data.name.payment.toLowerCase();
+  var payment_city =   data.payment_city.toUpperCase(3);
+  const re = /\s+/g;
+    function capital_letter(name_payment) {
+    name_payment = name_payment2.split(re);
+
+    for (var i = 0, x = name_payment.length; i < x; i++) {
+        name_payment[i] = name_payment[i][0].toUpperCase() + name_payment[i].substr(1);
+    }
+    return name_payment.join(" ");
+}
+// const str2 = name_payment2;
+//  
+// function getUpper(str) {
+//   return str2.split(/\s+/i).map(function(word) { 
+//     return word[0].toUpperCase() + word.slice(1);
+//   }).join(' ');
+// }
+// console.log(getUpper(str2));
+
+  $("#name_payment").val(capital_letter || "");
+  $("#bic").val(data.bic);
+  $("#correspondent_account").val(data.correspondent_account);
+  $("#payment_city").val(data.payment_city);
+//   $("#party_account").val(data.party_account);
+}
+</script>
+<script> 
+ function morpherpart() {
+ const morpher = new Morpher();
+ 	if (document.getElementById("party_short").value == 'ИП') {
+	var str = document.getElementById("party_full").value.toLowerCase();}
+	else {var str = document.getElementById("post").value.toLowerCase();}
+	
+	function capital_letter(str) {
+    str = str.split(" ");
+    for (var i = 0, x = str.length; i < x; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+    return str.join(" ");
+}
+		morpher.russian.declension(str).then(
+    result => {
+	let post1 = result.родительный;
+	let post2 = result.дательный;
+	document.getElementById("post0").value = str;
+	document.getElementById("post1").value = post1;
+	document.getElementById("post2").value = post2;
+ },
+ 	error => {
+ 	if (typeof error === 'MorpherError') {
+ 	 console.error(error.message + ' Код ошибки: ' + 	error.code);
+	 } else {
+ 	 console.error(error);
+ 			 }
+		 }
+	);
+}
+</script>
+<script> 
+ function morpherfio() {
+ const morpher = new Morpher();
+ if (document.getElementById("party_short").value == 'ИП') { 	
+ var fiofull = document.getElementById("name_full").value;} 
+ else {var fiofull = document.getElementById("name").value;}
+	morpher.russian.declension(fiofull, Morpher.FLAG_NAME).then(
+    result => {
+	let fiofull1 = result.родительный;
+	let fiofull2 = result.дательный;
+	document.getElementById("fiofull0").value = fiofull;
+	document.getElementById("fiofull1").value = fiofull1;
+	document.getElementById("fiofull2").value = fiofull2;
+
+ },
+ 	error => {
+ 	if (typeof error === 'MorpherError') {
+ 	 console.error(error.message + ' Код ошибки: ' + 	error.code);
+	 } else {
+ 	 console.error(error);
+ 			 }
+		 }
+	);
+morpherpart()
+}
+</script>
+
+
+<script>
+function sendData()
+	{
+  	var outData = {};
+  	var elements = document.forms[0].querySelectorAll( "input" );
+  	for(var i=0;i<elements.length;i++) outData[elements[i].id] = elements[i].value;
+  	google.script.run.sendData(outData);
+  	google.script.host.close()
+	}
+</script>
+</body>
+</html>
